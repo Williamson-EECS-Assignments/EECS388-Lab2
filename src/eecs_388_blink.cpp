@@ -16,11 +16,10 @@
  *          Runs initialization calls one time on power up
  *          Input/Output (IO) pins are configured
  *******************************************************************************/
-void setup()
-{
-gpio_mode(GPIO_13, GPIO_OUTPUT);  /* Built-in LED */
+void setup() {
+    gpio_mode(GPIO_13, GPIO_OUTPUT);  /* Built-in LED */
 
-/* Task 2.2 - Setup the GPIO_12 and GPIO_11 lines for output */
+    /* Task 2.2 - Setup the GPIO_12 and GPIO_11 lines for output */
 
 }
 
@@ -32,20 +31,18 @@ gpio_mode(GPIO_13, GPIO_OUTPUT);  /* Built-in LED */
  *          Performs a single iteration of the system's function
  *          Repeates indefinetely unless the board is reset or powered off
  *******************************************************************************/
-void loop() 
-{
+void loop() {
+    gpio_write(GPIO_13, ON);
+    delay_ms(ONE_SEC);
+    gpio_write(GPIO_13, OFF);
+    delay_ms(HALF_SEC);
 
-gpio_write(GPIO_13, ON);
-delay_ms(ONE_SEC);
-gpio_write(GPIO_13, OFF);
-delay_ms(HALF_SEC);
+    /* Task 2.2 - Toggle the GPIOs through RED -> Green -> Blue. 
+                On for 500ms, off for 300ms */
 
-/* Task 2.2 - Toggle the GPIOs through RED -> Green -> Blue. 
-              On for 500ms, off for 300ms */
+    /* Task 2.3 - BONUS: Modify your code to insert white so order will be
+                Red -> Green -> Blue -> White */
 
-/* Task 2.3 - BONUS: Modify your code to insert white so order will be
-              Red -> Green -> Blue -> White */
-
-/* Task 2.4 - BONUS: Use GPIO_10 and create an active-low circuit for a RED LED */
+    /* Task 2.4 - BONUS: Use GPIO_10 and create an active-low circuit for a RED LED */
 
 }

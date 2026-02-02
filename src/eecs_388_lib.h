@@ -34,8 +34,8 @@
 extern "C" {
 #endif
 
- void delay_ms(unsigned long ms);
- void gpio_mode(uint8_t pin, uint8_t mode);
+void delay_ms(unsigned long ms);
+void gpio_mode(uint8_t pin, uint8_t mode);
 void gpio_write(uint8_t pin, uint8_t val);
 
 
